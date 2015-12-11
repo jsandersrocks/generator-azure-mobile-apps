@@ -1,0 +1,30 @@
+{
+  "name": "generator-azure-mobile-apps",
+  "version": "0.1.0",
+  "description": "Scaffold out a complete Azure Mobile Apps service",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "azure",
+    "azure-mobile"
+  ],
+  "author": {
+    "name": "Adrian Hall",
+    "email": "adrian@shellmonger.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "yeoman-generator": "^0.21.1"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/adrianhall/generator-azure-mobile-apps.git"
+  },
+  "files": [
+    "generators/app"
+  ]
+}

@@ -1,0 +1,21 @@
+Description:
+    Creates a new basic Azure App Service
+
+Options:
+    None
+
+Example:
+    yo azure-mobile-apps
+
+    This will create:
+        Standard Project Files
+            .gitignore
+            jsconfig.json
+            package.json
+
+        Application Files
+            server.js
+
+        Example Controllers
+            tables/example.js
+            api/example.js
