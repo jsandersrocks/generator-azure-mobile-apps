@@ -1,6 +1,6 @@
 {
   "name": "generator-azure-mobile-apps",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Scaffold out a complete Azure Mobile Apps service",
   "main": "app/index.js",
   "scripts": {
