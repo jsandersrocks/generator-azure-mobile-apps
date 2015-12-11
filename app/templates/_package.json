@@ -15,7 +15,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "azure-mobile-apps": "^2.0.0",
+        "azure-mobile-apps": "^2.0.0-beta1",
         "express": "^4.13.0",
         "winston": "^2.1.0"
     },

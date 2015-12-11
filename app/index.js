@@ -1,7 +1,8 @@
 'use strict';
 
 var generators = require('yeoman-generator'),
-    chalk = require('chalk');
+    chalk = require('chalk'),
+    yosay = require('yosay');
 
 module.exports = generators.Base.extend({
     constructor: function() {
@@ -37,8 +38,12 @@ module.exports = generators.Base.extend({
         this.pkg = require('../package.json');
     },
 
-    askFor: function() {
+    prompting: function() {
         var done = this.async();
+
+        this.log(yosay(
+            'Welcome to the ' + chalk.red('Azure App Service Mobile Apps') + ' generator!'
+        ));
 
         // We have nothing more to ask for right now.
         done();
@@ -46,9 +51,7 @@ module.exports = generators.Base.extend({
 
     writing: {
         'files': function() {
-            var src = this.templatePath,
-                dest = this.destinationPath,
-                copy = this.fs.copy;
+            var self = this;
 
             // Copy the following files as-is
             var fileList = [
@@ -61,7 +64,10 @@ module.exports = generators.Base.extend({
             ];
 
             fileList.forEach(function copyFile(filename) {
-                copy(src(filename), dest(filename));
+                self.fs.copy(
+                    self.templatePath(filename),
+                    self.destinationPath(filename)
+                );
             });
         },
 
@@ -77,7 +83,9 @@ module.exports = generators.Base.extend({
     },
 
     install: function() {
-        this.installDependendencies({
+        this.installDependencies({
+            npm: true,
+            bower: false,
             skipInstall: this.options['skip-install'],
             skipMessage: this.options['skip-install-message']
         });
