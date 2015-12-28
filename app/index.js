@@ -71,8 +71,10 @@ module.exports = generators.Base.extend({
             ];
 
             fileList.forEach(function copyFile(filename) {
+                // initial dots get renamed
+                let srcfile = filename.replace(/^\./, '_');
                 self.fs.copy(
-                    self.templatePath(filename),
+                    self.templatePath(srcfile),
                     self.destinationPath(filename)
                 );
             });
