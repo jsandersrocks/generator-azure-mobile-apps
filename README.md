@@ -15,3 +15,13 @@ Azure database and [deploy your app] to Azure.
 [Azure App Service]: https://azure.microsoft.com/en-us/documentation/services/app-service/
 [Azure App Service Mobile App]: https://azure.microsoft.com/en-us/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/
 [deploy your app]: https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/
+
+## What's included:
+
+The scaffolding includes a complete Azure Mobile App with an associated ExpressJS app for a basic
+web application.  The ExpressJS side of things includes transaction monitoring, static files, body
+parser and compression.
+
+In addition, basic web app tests are scaffolded out.
+
+To run the web app after creation, use ```npm start```.  To run the tests, use ```npm test```.

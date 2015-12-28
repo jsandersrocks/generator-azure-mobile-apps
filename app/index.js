@@ -55,12 +55,19 @@ module.exports = generators.Base.extend({
 
             // Copy the following files as-is
             var fileList = [
+                '.editorconfig',
                 '.gitignore',
-                'server.js',
                 'jsconfig.json',
-                'azureMobile.js',
-                'tables/example.js',
-                'api/example.js'
+                'bin/www',
+                'config/custom-environment-variables.json',
+                'config/default.json',
+                'public/index.html',
+                'server/api/example.js',
+                'server/tables/example.js',
+                'server/app.js',
+                'server/logger.js',
+                'test/app.js',
+                'test/logger.js'
             ];
 
             fileList.forEach(function copyFile(filename) {

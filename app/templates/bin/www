@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+var args = require('shell-arguments');
+var config = require('config');
+var http = require('http');
+
+var createWebApplication = require('../server/app');
+
+/*
+** Create a new HTTP Listener that listens on the PORT specified
+**  --port arguments
+**  process.env.PORT environment variable
+**  specified in the ../config/<env>.json file
+**  specified in the ../config/default.json file
+*/
+if (typeof args.port !== 'undefined') {
+    config.port = args.port
+}
+
+// webApp is a function that returns a Promise when everything is set up
+createWebApplication().then((app) => {
+    app.set('port', config.get('port'));
+
+    var server = http.createServer(app);
+    server.on('error', (error) => {
+        if (error.syscall && error.code && error.syscall === 'listen') {
+            console.error(`Cannot listen for connections (${error.code}): ${error.message}`);
+        }
+        throw error;
+    });
+
+    server.on('listening', () => {
+        var addr = server.address();
+        console.info(`Listening on PORT: ${addr.family}/(${addr.address}):${addr.port}`);
+    });
+
+    server.listen(app.get('port'));
+});
