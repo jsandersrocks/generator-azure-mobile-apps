@@ -1,3 +1,5 @@
+'use strict';
+
 // Provides a route to /api/example
 
 var dataObject = {

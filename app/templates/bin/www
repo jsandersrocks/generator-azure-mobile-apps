@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var args = require('shell-arguments');
 var config = require('config');
 var http = require('http');
@@ -18,18 +20,18 @@ if (typeof args.port !== 'undefined') {
 }
 
 // webApp is a function that returns a Promise when everything is set up
-createWebApplication().then((app) => {
+createWebApplication().then(function (app) {
     app.set('port', config.get('port'));
 
     var server = http.createServer(app);
-    server.on('error', (error) => {
+    server.on('error', function (error) {
         if (error.syscall && error.code && error.syscall === 'listen') {
             console.error(`Cannot listen for connections (${error.code}): ${error.message}`);
         }
         throw error;
     });
 
-    server.on('listening', () => {
+    server.on('listening', function () {
         var addr = server.address();
         console.info(`Listening on PORT: ${addr.family}/(${addr.address}):${addr.port}`);
     });

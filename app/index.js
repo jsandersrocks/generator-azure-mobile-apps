@@ -56,6 +56,7 @@ module.exports = generators.Base.extend({
             // Copy the following files as-is
             var fileList = [
                 '.editorconfig',
+                '.eslintrc.js',
                 '.gitignore',
                 'jsconfig.json',
                 'bin/www',
@@ -67,7 +68,9 @@ module.exports = generators.Base.extend({
                 'server/app.js',
                 'server/logger.js',
                 'test/app.js',
-                'test/logger.js'
+                'test/logger.js',
+                'test/.eslintrc.js',
+                'test/spec/.eslintrc.js'
             ];
 
             fileList.forEach(function copyFile(filename) {

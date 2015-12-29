@@ -5,6 +5,7 @@
     "private": true,
     "scripts": {
         "start": "node ./bin/www",
+        "pretest": "eslint server test",
 <% if(testFramework==='jasmine') { -%>
         "test": "jasmine"
 <% } else if(testFramework==='mocha') { -%>
@@ -32,6 +33,7 @@
 <% } else if(testFramework==='mocha') { -%>
         "mocha": "^2.3.0",
 <% } -%>
-        "chai": "^3.4.1"
+        "chai": "^3.4.1",
+        "eslint": "^1.10.3"
     }
 }

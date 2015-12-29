@@ -1,3 +1,5 @@
+'use strict';
+
 var table = require('azure-mobile-apps').table();
 
 // Static Schema

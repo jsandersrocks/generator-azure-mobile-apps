@@ -1,3 +1,5 @@
+'use strict';
+
 var azureMobileApp = require('azure-mobile-apps'),
     bodyParser = require('body-parser'),
     compression = require('compression'),
@@ -38,7 +40,7 @@ function createWebApplication(logging) {
     mobile.api.import('./api');
 
     return mobile.tables.initialize()
-        .then(() => {
+        .then(function () {
             app.use(mobile);
             app.use(logCollector.errorLogger({
                 winstonInstance: logger
