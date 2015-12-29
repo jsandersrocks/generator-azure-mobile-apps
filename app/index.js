@@ -69,7 +69,6 @@ module.exports = generators.Base.extend({
                 'server/logger.js',
                 'test/app.js',
                 'test/logger.js',
-                'test/.eslintrc.js',
                 'test/spec/.eslintrc.js'
             ];
 
@@ -87,6 +86,16 @@ module.exports = generators.Base.extend({
             this.fs.copyTpl(
                 this.templatePath('_package.json'),
                 this.destinationPath('package.json'),
+                {
+                    testFramework: this.options['test-framework']
+                }
+            );
+        },
+
+        'test-eslintrc': function() {
+            this.fs.copyTpl(
+                this.templatePath('test/_eslintrc.js'),
+                this.destinationPath('test/.eslintrc.js'),
                 {
                     testFramework: this.options['test-framework']
                 }
