@@ -67,7 +67,6 @@ module.exports = generators.Base.extend({
                 'server/tables/example.js',
                 'server/app.js',
                 'server/logger.js',
-                'test/app.js',
                 'test/logger.js',
                 'test/spec/.eslintrc.js'
             ];
@@ -82,20 +81,31 @@ module.exports = generators.Base.extend({
             });
         },
 
+        'templateFiles': function() {
+            var self = this;
+
+            // Copy the following files using template strings
+            var fileList = [
+                'test/.eslintrc.js',
+                'test/app.js'
+            ];
+
+            fileList.forEach(function copyFile(filename) {
+                self.fs.copyTpl(
+                    self.templatePath(filename),
+                    self.destinationPath(filename),
+                    {
+                        testFramework: this.options['test-framework']
+                    }
+                );
+            });
+        },
+
+        // Special case package.json
         'package-json': function() {
             this.fs.copyTpl(
                 this.templatePath('_package.json'),
                 this.destinationPath('package.json'),
-                {
-                    testFramework: this.options['test-framework']
-                }
-            );
-        },
-
-        'test-eslintrc': function() {
-            this.fs.copyTpl(
-                this.templatePath('test/_eslintrc.js'),
-                this.destinationPath('test/.eslintrc.js'),
                 {
                     testFramework: this.options['test-framework']
                 }

@@ -32,8 +32,8 @@
         "jasmine": "^2.4.0",
 <% } else if(testFramework==='mocha') { -%>
         "mocha": "^2.3.0",
-<% } -%>
         "chai": "^3.4.1",
+<% } -%>
         "eslint": "^1.10.3"
     }
 }
