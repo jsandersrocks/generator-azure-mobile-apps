@@ -95,7 +95,7 @@ module.exports = generators.Base.extend({
                     self.templatePath(filename),
                     self.destinationPath(filename),
                     {
-                        testFramework: this.options['test-framework']
+                        testFramework: self.options['test-framework']
                     }
                 );
             });
