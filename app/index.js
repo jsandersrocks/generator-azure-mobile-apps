@@ -25,6 +25,7 @@ module.exports = generators.Base.extend({
         } else if (this.options['test-framework'] === 'jasmine') {
             testLocal = require.resolve('generator-jasmine/generators/app/index.js');
         }
+
         this.composeWith(this.options['test-framework']+':app', {
             options: {
                 'skip-install': this.options['skip-install']
