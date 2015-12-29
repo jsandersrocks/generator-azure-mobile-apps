@@ -56,9 +56,11 @@ module.exports = generators.Base.extend({
 
             // Copy the following files as-is
             var fileList = [
+                '.deployment',
                 '.editorconfig',
                 '.eslintrc.js',
                 '.gitignore',
+                'deploy.cmd',
                 'jsconfig.json',
                 'bin/www',
                 'config/custom-environment-variables.json',
@@ -73,7 +75,9 @@ module.exports = generators.Base.extend({
             ];
 
             fileList.forEach(function copyFile(filename) {
-                // initial dots get renamed
+                // Initial dots get replaced by underscores in the template directory
+                // This is to avoid the .gitignore problem where certain files are not
+                // kept because they are in the .gitignore.
                 let srcfile = filename.replace(/^\./, '_');
                 self.fs.copy(
                     self.templatePath(srcfile),
@@ -131,5 +135,4 @@ module.exports = generators.Base.extend({
             return;
         }
     }
-
 });
