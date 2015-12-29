@@ -16,9 +16,6 @@
         "test": "mocha"
 <% } -%>
     },
-    "engines": {
-        "node": ">=4.2.3"
-    },
     "license": "MIT",
     "dependencies": {
         "azure-mobile-apps": "^2.0.0-beta2",
