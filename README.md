@@ -4,8 +4,17 @@
 
 ## Getting Started
 
-- Install: `npm install -g yo generator-azure-mobile-apps`
-- Run: `mkdir myproject; cd myproject; yo azure-mobile-apps`
+Install Yeoman and the Yeoman Generator for Azure Mobile Apps
+
+    (sudo) npm install -g yo generator-azure-mobile-apps
+
+Create an Azure Mobile Apps base application
+
+    mkdir myproject
+    cd myproject
+    yo azure-mobile-apps
+
+Start editing your project!
 
 ## Configuring an Azure Mobile Apps project
 
@@ -18,10 +27,15 @@ Azure database and [deploy your app] to Azure.
 
 ## What's included:
 
-The scaffolding includes a complete Azure Mobile App with an associated ExpressJS app for a basic
-web application.  The ExpressJS side of things includes transaction monitoring, static files, body
-parser and compression.
+A Boilerplate Azure Mobile Apps service that is suitable for deploying to Azure App Service.
+It includes a public web area (that is served statically) and example tables.  It also includes
+basic tests for [jasmine] or [mocha] and linting for the entire project using [eslint] with
+a set of rules that are fairly strict.
 
-In addition, basic web app tests are scaffolded out.
+[jasmine]: http://jasmine.github.io/
+[mocha]: http://mochajs.org/
+[eslint]: http://eslint.org/
 
-To run the web app after creation, use ```npm start```.  To run the tests, use ```npm test```.
+You can test the entire service using ```npm test``` - this will also run the linter.
+
+Start the server locally using ```npm start```.
