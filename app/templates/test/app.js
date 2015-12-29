@@ -14,7 +14,7 @@ describe('server/app.js', function () {
         expect(createWebApplication()).to.be.an.instanceof(Promise);
     });
 
-    it('should resolve to an express Application', function (done) {
+    it('should resolve to an express Application', function () {
         createWebApplication().then(function (app) {
             expect(app).to.be.a('function');
         });

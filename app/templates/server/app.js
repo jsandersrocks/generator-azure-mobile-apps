@@ -14,13 +14,14 @@ var azureMobileApp = require('azure-mobile-apps'),
  * @returns {Promise.<express.Application>} A promisified express application
  */
 function createWebApplication(logging) {
-    var app = express();
+    var app = express(),
+        mobile = azureMobileApp();
 
     if (typeof logging === 'undefined' || logging === true) {
         app.use(logCollector.logger({
             winstonInstance: logger,
             colorStatus: true,
-            statusLevels: true,
+            statusLevels: true
         }));
     }
 
@@ -35,7 +36,6 @@ function createWebApplication(logging) {
         lastModified: true
     }));
 
-    var mobile = azureMobileApp();
     mobile.tables.import('./tables');
     mobile.api.import('./api');
 
