@@ -49,8 +49,6 @@ module.exports = exports = {
         "no-extend-native": ERROR,
         "no-extra-bind": WARN,
         "no-extra-parens": ERROR,
-        "no-extend-native": ERROR,
-        "no-extra-bind": WARN,
         "no-floating-decimal": WARN,
         "no-implicit-coercion": [ WARN, {
             "boolean": true,
