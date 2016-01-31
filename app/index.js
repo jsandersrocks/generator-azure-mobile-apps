@@ -78,7 +78,7 @@ module.exports = generators.Base.extend({
                 // Initial dots get replaced by underscores in the template directory
                 // This is to avoid the .gitignore problem where certain files are not
                 // kept because they are in the .gitignore.
-                let srcfile = filename.replace(/^\./, '_');
+                var srcfile = filename.replace(/^\./, '_');
                 self.fs.copy(
                     self.templatePath(srcfile),
                     self.destinationPath(filename)
