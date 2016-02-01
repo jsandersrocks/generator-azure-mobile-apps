@@ -6,7 +6,7 @@ var args = require('shell-arguments');
 var config = require('config');
 var http = require('http');
 
-var createWebApplication = require('../server/app');
+var createWebApplication = require('./server/app');
 
 /*
 ** Create a new HTTP Listener that listens on the PORT specified

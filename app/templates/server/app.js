@@ -1,10 +1,12 @@
 'use strict';
+/* global __dirname */
 
 var azureMobileApp = require('azure-mobile-apps'),
     bodyParser = require('body-parser'),
     compression = require('compression'),
     express = require('express'),
     logCollector = require('express-winston'),
+    path = require('path'),
     staticFiles = require('serve-static'),
     logger = require('./logger');
 
@@ -36,8 +38,8 @@ function createWebApplication(logging) {
         lastModified: true
     }));
 
-    mobile.tables.import('./tables');
-    mobile.api.import('./api');
+    mobile.tables.import(path.join(__dirname, 'tables'));
+    mobile.api.import(path.join(__dirname, 'api'));
 
     return mobile.tables.initialize()
         .then(function () {

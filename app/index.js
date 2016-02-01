@@ -62,7 +62,7 @@ module.exports = generators.Base.extend({
                 '.gitignore',
                 'deploy.cmd',
                 'jsconfig.json',
-                'bin/www',
+                'server.js',
                 'config/custom-environment-variables.json',
                 'config/default.json',
                 'public/index.html',
