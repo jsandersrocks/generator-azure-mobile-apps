@@ -8,7 +8,7 @@
     },
     "private": true,
     "scripts": {
-        "start": "node ./bin/www",
+        "start": "node ./server.js",
         "pretest": "eslint server test",
 <% if(testFramework==='jasmine') { -%>
         "test": "jasmine"
