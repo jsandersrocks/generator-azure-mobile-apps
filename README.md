@@ -39,3 +39,9 @@ a set of rules that are fairly strict.
 You can test the entire service using ```npm test``` - this will also run the linter.
 
 Start the server locally using ```npm start```.
+
+## Contributing
+
+Firstly, thanks for even thinking about contributing.  We welcome pull requests and, since this is
+not sponsored by an organization, we don't have any fancy CLAs to fill in.  Please follow our
+[Contributing Guide](CONTRIBUTING.md) to get started.

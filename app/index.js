@@ -2,11 +2,12 @@
 
 var generators = require('yeoman-generator'),
     chalk = require('chalk'),
-    yosay = require('yosay');
+    yosay = require('yosay'),
+    pkg = require('../package.json');
 
 module.exports = generators.Base.extend({
-    constructor: function() {
-        var testLocal;
+    constructor: function () {
+        var testLocal = null;
 
         generators.Base.apply(this, arguments);
 
@@ -26,7 +27,7 @@ module.exports = generators.Base.extend({
             testLocal = require.resolve('generator-jasmine/generators/app/index.js');
         }
 
-        this.composeWith(this.options['test-framework']+':app', {
+        this.composeWith(this.options['test-framework'] + ':app', {
             options: {
                 'skip-install': this.options['skip-install']
             }
@@ -35,11 +36,11 @@ module.exports = generators.Base.extend({
         });
     },
 
-    initializing: function() {
-        this.pkg = require('../package.json');
+    initializing: function () {
+        this.pkg = pkg;
     },
 
-    prompting: function() {
+    prompting: function () {
         var done = this.async();
 
         this.log(yosay(
@@ -51,7 +52,7 @@ module.exports = generators.Base.extend({
     },
 
     writing: {
-        'files': function() {
+        'files': function () {
             var self = this;
 
             // Copy the following files as-is
@@ -86,7 +87,7 @@ module.exports = generators.Base.extend({
             });
         },
 
-        'templateFiles': function() {
+        'templateFiles': function () {
             var self = this;
 
             // Copy the following files using template strings
@@ -107,7 +108,7 @@ module.exports = generators.Base.extend({
         },
 
         // Special case package.json
-        'package-json': function() {
+        'package-json': function () {
             this.fs.copyTpl(
                 this.templatePath('_package.json'),
                 this.destinationPath('package.json'),
@@ -118,7 +119,7 @@ module.exports = generators.Base.extend({
         }
     },
 
-    install: function() {
+    install: function () {
         this.installDependencies({
             npm: true,
             bower: false,
@@ -127,7 +128,7 @@ module.exports = generators.Base.extend({
         });
     },
 
-    end: function() {
+    end: function () {
         var howToInstall = '\nAfter running ' + chalk.yellow.bold('npm install') + ', publish your service to Azure App Service.';
 
         if (this.options['skip-install']) {
