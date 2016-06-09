@@ -1,5 +1,9 @@
 Description:
-    Creates a new basic Azure App Service Mobile App
+    Creates a new basic Azure App Service Mobile App.
+
+    You can create an Azure Mobile App and run it locally on
+    all platforms.  Use the SQLite3 Driver (which is included
+    by default) for local development.
 
 Options:
     Jasmine or Mocha for testing
@@ -14,13 +18,13 @@ Example:
             package.json
 
         Application Files
-            bin/www
+            server.js
             server/app.js
             server/logger.js
 
         Example Controllers
-            server/tables/example.js
-            server/api/example.js
+            tables/example.{js,json}
+            api/example.js
 
         Tests
             test/app.js

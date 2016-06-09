@@ -17,7 +17,7 @@ var azureMobileApp = require('azure-mobile-apps'),
  */
 function createWebApplication(logging) {
     var app = express(),
-        mobile = azureMobileApp();
+        mobile = azureMobileApp({ swagger: true, homePage: true });
 
     if (typeof logging === 'undefined' || logging === true) {
         app.use(logCollector.logger({
@@ -38,8 +38,8 @@ function createWebApplication(logging) {
         lastModified: true
     }));
 
-    mobile.tables.import(path.join(__dirname, 'tables'));
-    mobile.api.import(path.join(__dirname, 'api'));
+    mobile.tables.import(path.join(__dirname, '../tables'));
+    mobile.api.import(path.join(__dirname, '../api'));
 
     return mobile.tables.initialize()
         .then(function () {

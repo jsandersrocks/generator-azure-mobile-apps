@@ -1,10 +1,10 @@
 {
     "version": "0.0.1",
-    "description": "A basic mobile service for Azure App Service",
-    "main": "bin/www",
+    "description": "A basic mobile backend for Azure App Service",
+    "main": "server.js",
     "engines": {
-        "node": ">5.1.1",
-        "npm": ">3.3.6"
+        "node": ">6.2.0",
+        "npm": ">3.9.0"
     },
     "private": true,
     "scripts": {
@@ -18,23 +18,24 @@
     },
     "license": "MIT",
     "dependencies": {
-        "azure-mobile-apps": "^2.0.2",
-        "body-parser": "^1.14.2",
-        "compression": "^1.6.0",
-        "config": "^1.17.1",
-        "express": "^4.13.3",
-        "express-winston": "^1.2.0",
-        "serve-static": "^1.10.0",
-        "shell-arguments": "^1.1.6",
-        "winston": "^2.1.1"
+        "azure-mobile-apps": "^2.1.7",
+        "body-parser": "^1.15.1",
+        "compression": "^1.6.2",
+        "config": "^1.21.0",
+        "express": "^4.13.4",
+        "express-winston": "^1.4.1",
+        "serve-static": "^1.11.0",
+        "shell-arguments": "^1.1.9",
+        "winston": "^2.2.0"
     },
     "devDependencies": {
 <% if(testFramework==='jasmine') { -%>
-        "jasmine": "^2.4.0",
+        "jasmine": "^2.4.1",
 <% } else if(testFramework==='mocha') { -%>
-        "mocha": "^2.3.0",
-        "chai": "^3.4.1",
+        "mocha": "^2.5.3",
+        "chai": "^3.5.0",
 <% } -%>
-        "eslint": "^1.10.3"
+        "eslint": "^2.11.1",
+        "sqlite": "^2.0.2"
     }
 }

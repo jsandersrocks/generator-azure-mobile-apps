@@ -18,17 +18,8 @@ var table = require('azure-mobile-apps').table();
 //  With dynamic schema, we just store what we are provided
 table.dynamicSchema = true;
 
-// Access Rights
-//  - disabled
-//  - anonymous
-//  - authenticated
-table.access = 'disabled';
-
-// You can also override specific operations
-// table.read.access = 'anonymous';
-// table.insert.access = 'authenticated';
-// table.update.access = 'authenticated';
-// table.delete.access = 'authenticated';
+// Access Rights are performed within the JSON file associated
+// with this table.
 
 // Add specific code to operations.
 // For example, to only return records where the userid matches:

@@ -1,0 +1,17 @@
+{
+  "get": {
+    "access": "anonymous"
+  },
+  "post": {
+    "access": "anonymous"
+  },
+  "put": {
+    "access": "anonymous"
+  },
+  "patch": {
+    "access": "anonymous"
+  },
+  "delete": {
+    "access": "anonymous"
+  }
+}
