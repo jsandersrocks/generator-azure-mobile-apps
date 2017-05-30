@@ -23,7 +23,7 @@ The following is a set of guidelines for contributing to this project.   These a
 ### Code of Conduct
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).  By participating, you are expected to uphold this code.
-Please report unacceptable behavior to [adrian@shellmonger.com](mailto:adrian@shellmonger.com).
+Please report unacceptable behavior to [jsandersrocks@hotmail.com](mailto:jsandersrocks@hotmail.com).
 
 ## How Can I Contribute?
 
